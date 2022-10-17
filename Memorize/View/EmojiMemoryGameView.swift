@@ -135,6 +135,7 @@ struct EmojiMemoryGameView: View {
         }
     }
     
+    // MARK: - Deal Methods
     private func deal(_ card: EmojiMemoryGame.Card) {
         dealt.insert(card.id)
     }
@@ -151,10 +152,12 @@ struct EmojiMemoryGameView: View {
         return Animation.easeInOut(duration: CardConstants.dealDuration).delay(delay)
     }
     
+    // MARK: -
     private func zIndex(of card: EmojiMemoryGame.Card) -> Double {
         -Double(game.cards.firstIndex(where: { $0.id == card.id }) ?? 0)
     }
     
+    // MARK: - 
     private struct CardConstants {
         static let aspectRatio: CGFloat = 2/3
         static let dealDuration: Double = 0.5
